@@ -1,22 +1,22 @@
 import ClerkProviderWithRoutes from "./auth/ClerkProviderWithRoutes.jsx"
-import './App.css'
-import {Route, Routes} from "react-router-dom";
+import {Routes, Route} from "react-router-dom"
 import {Layout} from "./layout/Layout.jsx"
-import {Challengegenerator} from "./challenge/Challengegenerator.jsx";
+import {ChallengeGenerator} from "./challenge/ChallengeGenerator.jsx";
 import {HistoryPanel} from "./history/HistoryPanel.jsx";
-import {Authenticationpage} from "./auth/Authenticationpage.jsx";
+import {AuthenticationPage} from "./auth/AuthenticationPage.jsx";
+import './App.css'
 
 function App() {
-  return <ClerkProviderWithRoutes>
-      <Routes>
-          <Route path="/sign-in/*" element={<Authenticationpage />} />
-          <Route path="/sign-up" element={<Authenticationpage />} />
-          <Route element={<Layout/>}>
-              <Route path="/" element={<Challengegenerator/>} />
-              <Route path="/history" element={<HistoryPanel/>} />
-          </Route>
-      </Routes>
-  </ClerkProviderWithRoutes>
+    return <ClerkProviderWithRoutes>
+        <Routes>
+            <Route path="/sign-in/*" element={<AuthenticationPage />} />
+            <Route path="/sign-up" element={<AuthenticationPage />} />
+            <Route element={<Layout />}>
+                <Route path="/" element={<ChallengeGenerator />}/>
+                <Route path="/history" element={<HistoryPanel />}/>
+            </Route>
+        </Routes>
+    </ClerkProviderWithRoutes>
 }
 
 export default App

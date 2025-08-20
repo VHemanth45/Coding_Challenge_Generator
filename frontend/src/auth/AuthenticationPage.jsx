@@ -1,7 +1,7 @@
 import "react"
-import {SignIn,SignUp,SignedIn,SignedOut} from "@clerk/clerk-react";
+import {SignIn, SignUp, SignedIn, SignedOut} from "@clerk/clerk-react"
 
-export function Authenticationpage() {
+export function AuthenticationPage() {
     return <div className="auth-container">
         <SignedOut>
             <SignIn routing="path" path="/sign-in"/>
@@ -9,7 +9,7 @@ export function Authenticationpage() {
         </SignedOut>
         <SignedIn>
             <div className="redirect-message">
-                <p> You are already signed in. </p>
+                <p>You are already signed in.</p>
             </div>
         </SignedIn>
     </div>
